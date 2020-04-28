@@ -1,0 +1,82 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  font-family: sans-serif;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "head head"
+    "sidebar main";
+}
+/* header style */
+.head {
+  grid-area: head;
+  background-color: yellow;
+  display: grid;
+  grid-template-areas: "currentDate menu simpleSearch";
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.currentDate {
+  grid-area: currentDate;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.simpleSearch {
+  grid-area: simpleSearch;
+}
+
+/* sidebar style */
+.sidebar {
+  grid-area: sidebar;
+  background-color: red;
+  display: grid;
+  grid-template-areas:
+    "upcoming"
+    "list"
+    "tag";
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.upcoming {
+  grid-area: upcoming;
+}
+.list {
+  grid-area: list;
+}
+.tag {
+  grid-area: tag;
+}
+
+/* main content style */
+.main {
+  grid-area: main;
+  background-color: gold;
+}
+
+.form {
+  display: grid;
+  grid-template-areas: "firstCol secondCol";
+  grid-template-columns: 1fr 1fr;
+}
+.firstCol {
+  grid-area: firstCol;
+  display: grid;
+  margin: 2em;
+}
+
+.secondCol {
+  grid-area: secondCol;
+  display: grid;
+  margin: 2em;
+}
