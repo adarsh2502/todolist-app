@@ -1,12 +1,6 @@
 import React from "react";
 import tasks from "../tasks";
-
-
-
-function createTask(task){
-return <button>{task.dueDate}</button>;
-
-}
+import EachDate from"./EachDate";
 
 
 
@@ -16,9 +10,11 @@ function UpcomingTask() {
     <div className="upcoming">
       <label htmlfor="">Upcoming Tasks</label>
       <button>Add</button>
-      {tasks.map(createTask)}
+   
+      <EachDate />
+   
+      
      
-
     </div>
   );
 }
