@@ -1,5 +1,4 @@
 import React from "react";
-import tasks from "../tasks";
 import EachDate from"./EachDate";
 
 

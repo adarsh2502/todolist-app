@@ -27,7 +27,7 @@ body,
 .currentDate {
   grid-area: currentDate;
   font-size: 6vh;
-  vertical-align: bottom;
+  
   
  
 }
