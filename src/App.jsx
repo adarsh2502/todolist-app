@@ -10,6 +10,8 @@ import SortButton from "./mainContentComponent/SortButton";
 import CreateTask from "./mainContentComponent/CreateTask";
 import ExportList from "./mainContentComponent/ExportList";
 
+
+
 function App() {
   return (
     <>
@@ -20,7 +22,7 @@ function App() {
       </div>
 
       <div className="sidebar">
-        <UpcomingTask />
+        <UpcomingTask/>
         <ListGroup />
         <TagGroup />
       </div>
