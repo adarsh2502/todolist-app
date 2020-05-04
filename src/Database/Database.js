@@ -9,9 +9,21 @@ var con = mysql.createConnection({
     
 }
 );
+//function listValues(){
+// var c = "2020-04-28 00:00:00";
+
+// var sql ='select * from task where t_due_date = ' + mysql.escape(c); 
+// con.query(sql, function (err, result){
+//     if(err)
+//     {
+//         return console.log(err);
+//     }
+//     return console.log(result);
+// });
+function viewTask(){
 var c = "2020-04-28 00:00:00";
 
-var sql ='select * from task where t_due_date = ' + mysql.escape(c); 
+var sql ='select task.t_name,task.t_due_date,priority.p_priority from task INNER JOIN priority ON task.t_priority = priority.p_id where t_due_date = ' + mysql.escape(c) + 'ORDER BY task.t_priority'; 
 con.query(sql, function (err, result){
     if(err)
     {
@@ -19,6 +31,76 @@ con.query(sql, function (err, result){
     }
     return console.log(result);
 });
+
+}
+
+function viewOngoingTask()
+{
+var sql ='select task.t_name,task.t_due_date,priority.p_priority from task INNER JOIN priority ON task.t_priority = priority.p_id where t_status = 1 ORDER BY task.t_priority'; 
+con.query(sql, function (err, result){
+    if(err)
+    {
+        return console.log(err);
+    }
+    return console.log(result);
+});
+}
+
+function viewToStartTask()
+{
+var sql ='select task.t_name,task.t_due_date,priority.p_priority from task INNER JOIN priority ON task.t_priority = priority.p_id where t_status = 2 ORDER BY task.t_priority'; 
+con.query(sql, function (err, result){
+    if(err)
+    {
+        return console.log(err);
+    }
+    return console.log(result);
+});
+}
+
+function viewDoneTask()
+{
+var sql ='select task.t_name,task.t_due_date,priority.p_priority from task INNER JOIN priority ON task.t_priority = priority.p_id where t_status = 3 ORDER BY task.t_priority'; 
+con.query(sql, function (err, result){
+    if(err)
+    {
+        return console.log(err);
+    }
+    return console.log(result);
+});
+}
+
+function viewOverdueTask()
+{
+var sql ='select task.t_name,task.t_due_date,priority.p_priority from task INNER JOIN priority ON task.t_priority = priority.p_id where t_status = 4 ORDER BY task.t_priority'; 
+con.query(sql, function (err, result){
+    if(err)
+    {
+        return console.log(err);
+    }
+    return console.log(result);
+});
+}
+
+function viewOldTask()
+{
+var sql ='select task.t_name,task.t_due_date,priority.p_priority from task INNER JOIN priority ON task.t_priority = priority.p_id where t_status = 5 ORDER BY task.t_priority'; 
+con.query(sql, function (err, result){
+    if(err)
+    {
+        return console.log(err);
+    }
+    return console.log(result);
+});
+}
+
+//}
+// module.exports.listValues = function()
+// {
+//     console.log('hi');
+// };
+
+
 
 // let curr = new Date 
 // let week = []
@@ -30,6 +112,8 @@ con.query(sql, function (err, result){
 //   return console.log( week[i]);
 // }
 
+function dayListing()
+{
 var today = new Date();
 var today1 = new Date();
 var today2 = new Date();
@@ -123,3 +207,4 @@ console.log(today3);
 console.log(today4);
 console.log(today5);
 console.log(today6);
+}
