@@ -9,15 +9,17 @@ import TaskItem from "./mainContentComponent/TaskItem";
 import SortButton from "./mainContentComponent/SortButton";
 import CreateTask from "./mainContentComponent/CreateTask";
 import ExportList from "./mainContentComponent/ExportList";
-import TaskList from "./mainContentComponent/TaskList";
+
 
 function App () {
   const [page, setPage] = useState('task');
 
   let main;
   switch (page) {
-    case 'tasks':
-      main = <></>
+    default:
+      main = 
+      <><SortButton />
+      <TaskItem /></>
       break;
     case 'create':
       main = <CreateTask />
