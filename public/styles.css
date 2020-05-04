@@ -48,6 +48,7 @@ body,
 
 /* sidebar style */
 .sidebar {
+  height: 100%;
   grid-area: sidebar;
   background-color: red;
   display: grid;
