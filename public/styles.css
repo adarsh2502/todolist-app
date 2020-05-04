@@ -10,7 +10,7 @@ body,
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 70px 1fr;
   grid-template-areas:
     "head head"
     "sidebar main";
@@ -26,18 +26,29 @@ body,
 
 .currentDate {
   grid-area: currentDate;
+  font-size: 6vh;
+  
+  
+ 
 }
-
 .menu {
   grid-area: menu;
+  
 }
+
 
 .simpleSearch {
   grid-area: simpleSearch;
+  text-align: center;
+  
+
 }
+
+
 
 /* sidebar style */
 .sidebar {
+  height: 100%;
   grid-area: sidebar;
   background-color: red;
   display: grid;
