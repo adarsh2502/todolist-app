@@ -1,21 +1,17 @@
 import React from "react";
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import Button from 'react-bootstrap/Button';
 
 function SimpleSearch() {
   return (
-   
 
-       <form className="simpleSearch">
-         
-          <div class="d-inline-flex">
-            <input class="mx-1" type="search" placeholder="search"/>
-            <button  type="submit">Search</button>
-          </div>
-
-      
-        
-      </form>
-
-     
+    <>
+      <Form inline>
+        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+        <Button variant="outline-success">Search</Button>
+      </Form>
+    </>   
     
   );
 }
