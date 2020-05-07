@@ -1,5 +1,6 @@
 import React from "react";
-import dateList from "../Database/dateList";
+import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
 
 
 function dayListing()
@@ -103,7 +104,7 @@ return [today, today1, today2, today3, today4];
 
 
 function createDate(day){
-    return <div><button>{day}</button></div>;
+    return <Button size="sm" variant="outline-success" block className="mt-1 mx-1">{day}</Button>;
 }
 
 
@@ -111,9 +112,13 @@ function EachDate(){
 
     var dateArr = dayListing();
     return ( 
-    <div>
-        {dateArr.map(createDate)}
-    </div>);
+        /* add href value to be a url for a list of tasks */
+        
+           dateArr.map(createDate)
+        
+        
+    );
+   
 }
 
 export default EachDate;
