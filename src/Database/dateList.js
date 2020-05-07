@@ -93,4 +93,6 @@ console.log(today3);
 console.log(today4);
 console.log(today5);
 console.log(today6);
+
+return [today, today1, today2, today3, today4,today5,today6];
 }
