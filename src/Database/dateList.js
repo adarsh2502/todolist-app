@@ -1,3 +1,5 @@
+
+
 function dayListing()
 {
 var today = new Date();
@@ -19,7 +21,7 @@ var d6 = today.getDate() + 6;
 var mm = today.getMonth()+1; 
 var yyyy = today.getFullYear();
 
-if((mm == 4) || (mm == 6) || (mm == 9) || (mm == 11))
+if((mm === 4) || (mm === 6) || (mm === 9) || (mm === 11))
 {
     if(d1>30)
     {
@@ -93,4 +95,7 @@ console.log(today3);
 console.log(today4);
 console.log(today5);
 console.log(today6);
+
+return [today, today1, today2, today3, today4,today5,today6];
 }
+

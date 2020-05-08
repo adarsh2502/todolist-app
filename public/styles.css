@@ -50,7 +50,7 @@ body,
 .sidebar {
   height: 100%;
   grid-area: sidebar;
-  background-color: red;
+  /* background-color: red; */
   display: grid;
   grid-template-areas:
     "upcoming"
@@ -72,7 +72,7 @@ body,
 /* main content style */
 .main {
   grid-area: main;
-  background-color: gold;
+  /* background-color: gold; */
 }
 
 .form {
