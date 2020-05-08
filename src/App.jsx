@@ -12,10 +12,6 @@ import ExportList from "./mainContentComponent/ExportList";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
-
-
-import EachDate from "./sidebarComponent/EachDate";
-
 function App () {
   const [page, setPage] = useState('task');
 
@@ -23,8 +19,10 @@ function App () {
   switch (page) {
     default:
       main = 
-      <><SortButton />
-      <TaskItem /></>
+      <>
+        <SortButton />
+        <TaskItem />
+      </>
       break;
     case 'create':
       main = <CreateTask />
@@ -38,7 +36,7 @@ function App () {
   }
   return (
     <>
-      <Navbar bg="light" expand="lg" className="head">
+      <Navbar bg="dark" variant="dark" expand="lg" className="head">
         <CurrentDate />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -48,7 +46,7 @@ function App () {
           <SimpleSearch />
         </Navbar.Collapse>
       </Navbar>
-      <div className="sidebar">
+      <div className="sidebar border-right border-success pr-2">
         <div className="upcoming">
           <UpcomingTask setPage={setPage} className=""/>
         </div>

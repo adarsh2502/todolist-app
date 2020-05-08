@@ -1,59 +1,92 @@
 import React from "react";
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import Button from "react-bootstrap/Button";
 
 function CreateTask() {
   return (
-    <form action="self" className="form">
-      <div className="firstCol">
-        <label htmlFor="">Name</label>
-        <input type="text" />
-        <label htmlFor="">Priority</label>
-        <select name="" id="">
-          <option value="HIGH">HIGH</option>
-          <option value="MID">MID</option>
-          <option value="LOW">LOW</option>
-        </select>
-        <label htmlFor="">Status</label>
-        <select>
-          <option value="toStart">To Start</option>
-          <option value="ongoing">Ongoing</option>
-          <option value="done">Done</option>
-          <option value="overdue">Overdue</option>
-        </select>
-        <label htmlFor="">Start Date</label>
-        <input type="date" />
-        <label htmlFor="">Due Date</label>
-        <input type="date" />
-        <label htmlFor="">Group</label>
-        <input type="text" name="" id="" />
-        <label htmlFor="">Category</label>
-        <input type="text" name="" id="" />
-      </div>
-      <div className="secondCol">
-        <label htmlFor="">Recurring Task</label>
-        <input type="checkbox" />
-        <label htmlFor="">Frequency</label>
-        <select name="" id="">
-          <option value="">Daily</option>
-          <option value="">Weekly</option>
-          <option value="">Fortnightly</option>
-          <option value="">Monthly</option>
-        </select>
-        <label htmlFor="">End Date</label>
-        <input type="date" />
-        <label htmlFor="">Description</label>
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="type your description here"
-        />
-        <a href="index.js">
-          <button>Cancel</button>
-        </a>
-        <input type="submit" value="Submit" />
-      </div>
-    </form>
+
+    <Form className="my-3 mx-3">
+      <Row> 
+        {/* first column */}
+        <Col>
+          <Form.Label className="text-left">Task Name</Form.Label>
+          <Form.Control placeholder="task name" />
+          
+         
+            <Form.Label>Priroty</Form.Label>
+            <Form.Control as="select" custom>
+              <option selected>select a priority</option>
+              <option value="1">HIGH</option>
+              <option value="2">MEDIUM</option>
+              <option value="3">LOW</option>
+            </Form.Control>
+        
+            <Form.Label>Status</Form.Label>
+            <Form.Control as="select" custom>
+              <option selected>select a status</option>
+              <option value="1">TO START</option>
+              <option value="2">ONGOING</option>
+              <option value="3">DONE</option>
+              <option value="3">OVERDUE</option>
+            </Form.Control>
+        
+          
+          
+          <Row>
+            <Col>
+              <Form.Label>Start Date</Form.Label>
+              <DatePicker />
+            </Col>
+            <Col>
+              <Form.Label>Due Date</Form.Label>
+              <DatePicker />
+            </Col>
+          </Row>
+        
+          <Form.Label>Group/Tag</Form.Label>
+          <Form.Control as="select" custom>
+            <option selected>select a tag</option>
+          </Form.Control>
+          <Form.Label>Category/List</Form.Label>
+          <Form.Control as="select" custom>
+            <option selected>select a List</option>
+          </Form.Control>
+        </Col>
+        <Col>
+          <Form.Check type="checkbox" aria-label="recurring" inline/>
+          <Form.Label inline>Recurring Task?</Form.Label>
+
+          <Form.Label>Freuency</Form.Label>
+          <Form.Control as="select" custom>
+            <option selected>select a frequency</option>
+            <option value >DAILY</option>
+            <option value >WEEKLY</option>
+            <option value >MONTHLY</option>
+          </Form.Control>
+          <Form.Label>Repeated Times</Form.Label>
+          <Form.Control type="text" placeholder="enter the number of times you want to repeatedly created the tasks." />
+          <Form.Label>Decription</Form.Label>
+          <Form.Control as="textarea" placeholder="description....." />
+          
+          <Col>
+            <Button variant="success" >Cancel</Button>
+          </Col>
+          <Col>
+          <Button variant="success" as="submit" >Submit</Button>
+          </Col>
+          
+         
+          
+          
+
+        </Col>
+      </Row>
+     </Form> 
+  
   );
 }
 
