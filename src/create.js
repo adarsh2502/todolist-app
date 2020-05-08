@@ -9,7 +9,7 @@ var mysql = require('mysql');
 var add = require('date-fns/add');
 var format = require('date-fns/format');
 
-class Task {   
+class Task {
     /**
      * Constructor for Task class
      * Note: during integration add values taken from the front-end as parameters to the constructor and replace them with the hardcoded values inside the constructor.
@@ -20,13 +20,13 @@ class Task {
         this.priority = 1;
         this.status = 1;
         this.startDate = '2020-05-06';
-        this.dueDate = '2020-06-06';
+        this.dueDate = '2020-05-20';
         this.group = 1;
         this.cat = 1;
         this.recurring = true;
-        this.times = 3;
-        this.frequency = "weekly";
-        this.description = "This is rec test task 2";
+        this.times = 5;
+        this.frequency = "fortnightly";
+        this.description = "This is rec test task 3";
     }
 
     displayTask() {
@@ -157,6 +157,14 @@ function getRecDate(freq, sdate, ddate, no) {
             });
             ddate = add(ddate, {
                 months: no,
+            });
+            break;
+        case "fortnightly":
+            sdate = add(sdate, {
+                weeks: (no * 2),
+            });
+            ddate = add(ddate, {
+                weeks: (no * 2),
             });
             break;
     }
