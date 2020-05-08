@@ -38,7 +38,7 @@ function App () {
   }
   return (
     <>
-      <Navbar bg="light" expand="lg" className="head">
+      <Navbar bg="dark" variant="dark" expand="lg" className="head">
         <CurrentDate />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -48,7 +48,7 @@ function App () {
           <SimpleSearch />
         </Navbar.Collapse>
       </Navbar>
-      <div className="sidebar">
+      <div className="sidebar border-right border-success pr-2">
         <div className="upcoming">
           <UpcomingTask setPage={setPage} className=""/>
         </div>
