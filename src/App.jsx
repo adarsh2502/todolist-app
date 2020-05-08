@@ -12,10 +12,6 @@ import ExportList from "./mainContentComponent/ExportList";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
-
-
-import EachDate from "./sidebarComponent/EachDate";
-
 function App () {
   const [page, setPage] = useState('task');
 
@@ -23,8 +19,10 @@ function App () {
   switch (page) {
     default:
       main = 
-      <><SortButton />
-      <TaskItem /></>
+      <>
+        <SortButton />
+        <TaskItem />
+      </>
       break;
     case 'create':
       main = <CreateTask />
