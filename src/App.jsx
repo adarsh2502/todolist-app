@@ -68,14 +68,22 @@ function App () {
         <div className="upcoming">
           <UpcomingTask setPage={setPage} className=""/>
         </div>
-        <div>
-          <List addListItem={addListItem} className="list"/>
+        <div className="list">
+        <List addListItem={addListItem} />
+        <div className="listSection">
           {listItems.map(item => <ListItem item={item} />)}
-          
         </div>
-        <div>
-          <Tag addTagItem={addTagItem} className="tag"/>
-          {tags.map(tag => <TagItem tag={tag} />)}
+        </div>
+        
+     
+        
+      
+        <div className="tag">
+          <Tag addTagItem={addTagItem} />
+          <div className="tagSection">
+            {tags.map(tag => <TagItem tag={tag} />)}
+          </div>
+          
         </div>
       </div>
       <div className="main">
