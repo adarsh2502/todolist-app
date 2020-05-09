@@ -11,10 +11,11 @@ import CreateTask from "./mainContentComponent/CreateTask";
 import ExportList from "./mainContentComponent/ExportList";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import ListItem from './sidebarComponent/ListItem';
+
 
 function App () {
   const [page, setPage] = useState('task');
-
   let main;
   switch (page) {
     default:
@@ -34,6 +35,15 @@ function App () {
       main = <></>
       break;
   }
+
+ 
+  const [listItems, setListItems] = useState([]);
+  
+  function addListItem(newListItem){
+    setListItems([...listItems, newListItem]);
+  }
+
+
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="lg" className="head">
@@ -51,14 +61,14 @@ function App () {
           <UpcomingTask setPage={setPage} className=""/>
         </div>
         <div>
-          <List className="list"/>
+          <List addListItem={addListItem} className="list"/>
+          {listItems.map(item => <ListItem item={item} />)}
+          
         </div>
         <div>
           <Tag className="tag"/>
         </div>
       </div>
-      
-     
       <div className="main">
         { main }
       </div>
