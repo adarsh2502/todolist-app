@@ -4,12 +4,11 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 
 
-
-function ListItem(props){
+function TagItem(props){
     return (
         <div className="mx-2"> 
             <InputGroup.Append className="my-1 mx-0">
-                <Form.Control type="text" placeholder={props.item} inline/>
+                <Form.Control type="text" placeholder={props.tag} inline/>
                 <Button variant="success" className="mx-1">cancel</Button>
                 <Button variant="success">save</Button>
             </InputGroup.Append>
@@ -19,5 +18,4 @@ function ListItem(props){
   
 }
 
-
-export default ListItem;
+export default TagItem;

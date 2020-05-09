@@ -12,6 +12,7 @@ import ExportList from "./mainContentComponent/ExportList";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import ListItem from './sidebarComponent/ListItem';
+import TagItem from './sidebarComponent/TagItem';
 
 
 function App () {
@@ -38,10 +39,17 @@ function App () {
 
  
   const [listItems, setListItems] = useState([]);
-  
+  const [tags, setTags] = useState([]);
+
   function addListItem(newListItem){
     setListItems([...listItems, newListItem]);
   }
+
+  function addTagItem(newTagItem){
+    setTags([...tags, newTagItem]);
+  }
+
+
 
 
   return (
@@ -66,7 +74,8 @@ function App () {
           
         </div>
         <div>
-          <Tag className="tag"/>
+          <Tag addTagItem={addTagItem} className="tag"/>
+          {tags.map(tag => <TagItem tag={tag} />)}
         </div>
       </div>
       <div className="main">
