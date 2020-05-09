@@ -14,7 +14,7 @@ const tasks = [
         t_rec_id:"it's a int:depedning on the foreign key",
         t_group:"it's a int:depedning on the foreign key",
         t_caregory:"it's a int:depedning on the foreign key",
-        t_active:"it's a int:true===1,false===2"
+        t_active:"it's a int:true===1,false===0"
     },
     {
         t_id:1,
@@ -28,7 +28,7 @@ const tasks = [
         t_rec_id:"it's a int:depedning on the foreign key",
         t_group:"it's a int:depedning on the foreign key",
         t_caregory:"it's a int:depedning on the foreign key",
-        t_active:"it's a int:true===1,false===2"
+        t_active:"it's a int:true===1,false===0"
     }
 ]
 

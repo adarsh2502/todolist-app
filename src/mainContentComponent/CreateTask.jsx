@@ -36,8 +36,8 @@ function CreateTask() {
         
           
           
-          <Row>
-            <Col>
+          <Row className="mx-0">
+            <Col >
               <Form.Label>Start Date</Form.Label>
               <DatePicker />
             </Col>
@@ -64,6 +64,7 @@ function CreateTask() {
           <Form.Control as="select" custom>
             <option selected>select a frequency</option>
             <option value >DAILY</option>
+            <option value >FORTNIGHT</option>
             <option value >WEEKLY</option>
             <option value >MONTHLY</option>
           </Form.Control>
@@ -72,17 +73,11 @@ function CreateTask() {
           <Form.Label>Decription</Form.Label>
           <Form.Control as="textarea" placeholder="description....." />
           
-          <Col>
-            <Button variant="success" >Cancel</Button>
-          </Col>
-          <Col>
-          <Button variant="success" as="submit" >Submit</Button>
-          </Col>
-          
-         
-          
-          
 
+          <Button variant="success" className=" mt-5 mx-2">Cancel</Button>
+         
+          <Button variant="success" as="submit" className=" mt-5 mx-2" >Submit</Button>
+      
         </Col>
       </Row>
      </Form> 
