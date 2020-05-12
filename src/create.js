@@ -34,18 +34,18 @@ class Task {
     };
 }
 
-
+//put arguments inside the parenthesis
 var newTask = new Task();
 global.newId;
-var message = '';
+var message = 'creating';
 
 //assign values to be inserted into task table
 var valueListTsk = [];
 
 var con = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "",
+    user: "darachi",
+    password: "password",
     database: "finishit_db"
 });
 

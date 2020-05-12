@@ -7,12 +7,10 @@ import Button from "react-bootstrap/Button";
 
 function ListItem(props){
     return (
-        
-            <InputGroup.Append className="my-1 mx-3">
-                <Form.Control type="text" placeholder={props.item} inline/>
-                <Button variant="success" className="mx-1">cancel</Button>
-                <Button variant="success">save</Button>
-            </InputGroup.Append>
+        <div className="mx-3">
+            <Button size="sm" variant="outline-success" className="mt-1 mx-1">{props.item}</Button>
+        </div>
+         
 
         
     );
