@@ -6,12 +6,8 @@ import Button from "react-bootstrap/Button";
 
 function TagItem(props){
     return (
-        <div className="mx-2"> 
-            <InputGroup.Append className="my-1 mx-0">
-                <Form.Control type="text" placeholder={props.tag} inline/>
-                <Button variant="success" className="mx-1">cancel</Button>
-                <Button variant="success">save</Button>
-            </InputGroup.Append>
+        <div className="mx-3">
+            <Button size="sm" variant="outline-success" className="mt-1 mx-1">{props.tag}</Button>
         </div>
         
     );

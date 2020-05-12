@@ -13,9 +13,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import ListItem from './sidebarComponent/ListItem';
 import TagItem from './sidebarComponent/TagItem';
+import AddTagName from "./sidebarComponent/AddTagName";
+import AddListName from './sidebarComponent/AddListName';
 
 
 function App () {
+
+  //set the state for different component shown in main section.
   const [page, setPage] = useState('task');
   let main;
   switch (page) {
@@ -37,23 +41,22 @@ function App () {
       break;
   }
 
- 
-  const [listItems, setListItems] = useState([]);
-  const [tags, setTags] = useState([]);
-
+  // set Item array [] state; orgingal state for your reference. 
+  const [listItems, setListItems] = useState(["...fsads","dhj","42389fd","hfghf","fseg","ajhgj","trhsef","sgdfg"]);
+  //set tag array [] state;
+  const [tags, setTags] = useState(["...fsads","dhj","42389fd","hfghf","fseg","ajhgj","trhsef","sgdfg"]);
+  //append new list item to old list items. 
   function addListItem(newListItem){
     setListItems([...listItems, newListItem]);
   }
-
+  //append new tag item to old list items. 
   function addTagItem(newTagItem){
     setTags([...tags, newTagItem]);
   }
 
-
-
-
   return (
     <>
+      {/* nav bar element in header */}
       <Navbar bg="dark" variant="dark" expand="lg" className="head">
         <CurrentDate />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -64,29 +67,39 @@ function App () {
           <SimpleSearch />
         </Navbar.Collapse>
       </Navbar>
+
+      {/* sidebar elements. */}
       <div className="sidebar border-right border-success pr-2">
+
+        {/* upcoming task section  */}
         <div className="upcoming">
           <UpcomingTask setPage={setPage} className=""/>
         </div>
+
+        {/* list section */}
         <div className="list">
-        <List addListItem={addListItem} />
-        <div className="listSection">
-          {listItems.map(item => <ListItem item={item} />)}
+          <List addListItem={addListItem} />
+          <AddListName />
+          <div className="listSection">
+            {listItems.map(item => <ListItem item={item} />)}
+          </div>
+          
         </div>
-        </div>
-        
-     
-        
-      
+
+        {/* tag section */}
         <div className="tag">
           <Tag addTagItem={addTagItem} />
+          <AddTagName />
           <div className="tagSection">
             {tags.map(tag => <TagItem tag={tag} />)}
           </div>
           
         </div>
       </div>
+
+      {/* main section element */}
       <div className="main">
+        {/* check the 'main' variable status in javascript */}
         { main }
       </div>
     </>

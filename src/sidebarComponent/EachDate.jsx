@@ -101,24 +101,16 @@ console.log(today6);
 return [today, today1, today2, today3, today4];
 }
 
-
-
 function createDate(day){
     return <Button size="sm" variant="outline-success" block className="mt-1 mx-1">{day}</Button>;
 }
 
-
 function EachDate(){
-
     var dateArr = dayListing();
     return ( 
         /* add href value to be a url for a list of tasks */
-        
            dateArr.map(createDate)
-        
-        
     );
-   
 }
 
 export default EachDate;
